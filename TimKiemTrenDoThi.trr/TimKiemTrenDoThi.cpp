@@ -33,20 +33,11 @@ ifstream ifs("int.txt");
 }
 
 bool Check(string x,string y){
-	for(int i=0;i<x.length();i++)
-		for(int j=0;j<y.length();j++) {
-			if(x[i]==y[j]) {
-				x[i]='0';
-				y[j]='0';
-				break;
-			}
-		}
 	int d=0;
-	 for(int i=0;i<x.length();i++)
-	 if(x[i]!='0') d++;
-	 for(int j=0;j<y.length();j++)
-	 if(y[j]!='0') d++;
-	 if(d<=2) return true;else return false;
+
+	for(int i=0;i<max(x.length(),y.length());i++)
+	 if(x[i]!=y[i]) d++;
+	 if(d>1) return false ; else return true;
 	 
 
 }
